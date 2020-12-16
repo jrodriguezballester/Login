@@ -2,6 +2,7 @@ package com.example.farmacia2;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Patterns;
@@ -27,14 +28,19 @@ public class LoginActivity extends AppCompatActivity {
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               // Toast.makeText(LoginActivity.this, "Hola", Toast.LENGTH_LONG).show();
+
                 String email = editTextEmail.getText().toString();
                 String pass = editTextPassword.getText().toString();
-               login(email,pass);
+                boolean logeado=login(email,pass);
+               if (logeado){
+                   goToMain();
+               }
+
             }
         });
-
     }
+
+
 
     /**
      * Asociar variables Java a Elementos Interface Grafica
@@ -61,7 +67,7 @@ public class LoginActivity extends AppCompatActivity {
      * @return
      */
     private boolean IsValidPassWord(String password) {
-        return password.length() > 4;
+        return password.length() > 3;
     }
 
     /**
@@ -82,5 +88,13 @@ public class LoginActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Inicia MainActivity; Impide la vuelta al loginActivity
+     */
+    private void goToMain() {
+        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
+    }
 
 }
