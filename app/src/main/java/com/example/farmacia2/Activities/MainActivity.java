@@ -1,4 +1,4 @@
-package com.example.farmacia2;
+package com.example.farmacia2.Activities;
 
 import android.content.Context;
 import android.content.Intent;
@@ -9,6 +9,8 @@ import android.view.MenuItem;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.farmacia2.R;
 
 public class MainActivity extends AppCompatActivity {
     private SharedPreferences preferences;
@@ -31,8 +33,8 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             case R.id.menu_logout:
-logOut();
-               return true;
+                logOut();
+                return true;
             case R.id.menu_forget:
                 removeSharePreferences();
                 logOut();
