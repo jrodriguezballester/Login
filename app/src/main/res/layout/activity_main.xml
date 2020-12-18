@@ -6,15 +6,38 @@
     android:layout_height="match_parent"
     tools:context=".Activities.MainActivity">
 
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <Button
+        android:id="@+id/buttonDosis"
+        android:layout_width="202dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="32dp"
+        android:text="Dosis"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.516"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/farma" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonTratamiento" />
 
+    <Button
+        android:id="@+id/buttonInventario"
+        android:layout_width="204dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="42dp"
+        android:enabled="true"
+        android:text="Inventario"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.522"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonDosis" />
+
+    <Button
+        android:id="@+id/buttonTratamiento"
+        android:layout_width="200dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="56dp"
+        android:enabled="true"
+        android:text="Tratamiento"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.511"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

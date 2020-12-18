@@ -29,6 +29,11 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        //Titulo
+        setTitle("Farmacia - Login");
+        //icono
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setIcon(R.mipmap.ic_farma);
         // crear el archivo preferences
         preferences = getSharedPreferences("preferences", Context.MODE_PRIVATE);
 

@@ -25,6 +25,32 @@ public class Utils {
         return preferences.getString("PASS", "");
     }
     /**
+     * Obtener el Json guardado en SharePreferences
+     *
+     * @return
+     */
+    public static String getJSONPreferences(SharedPreferences preferences) {
+        return preferences.getString("JSON", "");
+    }
+
+    /**
+     * Borra el Email de ShavePreferences
+     * @param preferences
+     */
+    public static void removeEmailPreferences(SharedPreferences preferences) {
+        preferences.edit().remove("EMAIL").apply();
+    }
+    /**
+     * Borra el Password de ShavePreferences
+     * @param preferences
+     */
+    public static void removePasswordPreferences(SharedPreferences preferences) {
+        preferences.edit().remove("PASS").apply();
+    }
+
+
+
+    /**
      * Devuelve True si el parametro no esta vacio y cumple la expresion regular de Email
      *
      * @param email
