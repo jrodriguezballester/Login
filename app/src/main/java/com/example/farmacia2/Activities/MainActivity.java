@@ -8,15 +8,17 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.farmacia2.App.MyApp;
 import com.example.farmacia2.R;
 import com.example.farmacia2.Utils.Utils;
 
 public class MainActivity extends AppCompatActivity {
-    private SharedPreferences preferences;
+  //  private SharedPreferences preferences;
     private Button buttonDosis;
     private Button buttonTratamiento;
     private Button buttonInventario;
@@ -32,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
 
         setTitle("Mi Farmacia");
 
-        preferences = getSharedPreferences("preferences", Context.MODE_PRIVATE);
+      //  preferences = getSharedPreferences("preferences", Context.MODE_PRIVATE);
         buttonDosis = findViewById(R.id.buttonDosis);
         buttonTratamiento = findViewById(R.id.buttonTratamiento);
         buttonInventario = findViewById(R.id.buttonInventario);
@@ -44,11 +46,11 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        // FALTA DARLE FUNCIONALIDAD
+
         buttonTratamiento.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, DosisActivity.class);
+                Intent intent = new Intent(MainActivity.this, TratamientoActivity.class);
                 startActivity(intent);
             }
         });
@@ -58,8 +60,9 @@ public class MainActivity extends AppCompatActivity {
         buttonInventario.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, DosisActivity.class);
-                startActivity(intent);
+
+       //         Intent intent = new Intent(MainActivity.this, DosisActivity.class);
+        //        startActivity(intent);
             }
         });
 
@@ -91,8 +94,8 @@ public class MainActivity extends AppCompatActivity {
      */
     private void removeSharePreferences() {
         //preferences.edit().clear().apply();
-        Utils.removeEmailPreferences(preferences);
-        Utils.removePasswordPreferences(preferences);
+        Utils.removeEmailPreferences(MyApp.preferences);
+        Utils.removePasswordPreferences(MyApp.preferences);
     }
 
 

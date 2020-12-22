@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.farmacia2.App.MyApp;
 import com.example.farmacia2.R;
 import com.example.farmacia2.Utils.Utils;
 
@@ -22,7 +23,7 @@ public class LoginActivity extends AppCompatActivity {
     private EditText editTextEmail;
     private EditText editTextPassword;
     private Switch switchRemember;
-    private SharedPreferences preferences;
+   // private SharedPreferences preferences;
 
 
     @Override
@@ -35,7 +36,7 @@ public class LoginActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setIcon(R.mipmap.ic_farma);
         // crear el archivo preferences
-        preferences = getSharedPreferences("preferences", Context.MODE_PRIVATE);
+     //   preferences = getSharedPreferences("preferences", Context.MODE_PRIVATE);
 
 
         // asociar Valores interface Grafica
@@ -106,7 +107,7 @@ public class LoginActivity extends AppCompatActivity {
      * @param pass
      */
     private void saveOnPreferences(String email, String pass) {
-        SharedPreferences.Editor editor = preferences.edit();
+        SharedPreferences.Editor editor = MyApp.preferences.edit();
         editor.putString("EMAIL", email);
         editor.putString("PASS", pass);
         // editor.commit(); // [bloqueante y síncrono]
@@ -117,8 +118,8 @@ public class LoginActivity extends AppCompatActivity {
      * Rellena los editText con los valores de preferences
      */
     private void setCredencialsIfExists() {
-        String email = Utils.getEmailPreferences(preferences);
-        String password =Utils.getPasswordPreferences(preferences);
+        String email = Utils.getEmailPreferences(MyApp.preferences);
+        String password =Utils.getPasswordPreferences(MyApp.preferences);
         //  Toast.makeText(this, "e"+email+"-"+password, Toast.LENGTH_SHORT).show();
         if (!TextUtils.isEmpty(email) && !TextUtils.isEmpty(password)) {
             editTextEmail.setText(email);

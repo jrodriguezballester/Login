@@ -63,6 +63,11 @@ La app consta de
 
 		- Presenta los medicamentos que se tiene que tomar la abuelita en TextView generados dinámicamente a partir de los valores del SharePreferences
 
+	###### Version 1
+	- ##### TratamientoActivity
+		- Muestra los campos (nombre,dosis) a rellenar de Medicamento.
+		- Boton Añadir que agrega el nuevo medicamento a la lista y lo guarda en SharePreferences
+		- ListView personalizado que muestra los datos del medicamento
 - #### Clases Java
 
 
@@ -117,14 +122,16 @@ La app consta de
 ## Ampliaciones
 
 
-
 - Se guarda en SharePreferences un ArrayList de Objetos
 
 - Se añade la librería Gson para pasar objetos a Json y viceversa
 
 - Creación dinámica de elementos en DosisActivity
 
+##  Version 1
 
+- Unificadas las variables preferences y su get que habia en cada Activity en una variable static en MyApp
+- Funcionalidad a la Activity Tratamiento para poder añadir medicamentos al tratamiento; losd medicamentos se muestran en un listView personalizado
 ___________
 ## Imagenes
 
@@ -152,3 +159,9 @@ ___________
 
 ### DosisActivity
 <img src="./imagenes/capt5.png"  width="300" height="460">
+
+### Version 1.
+#### TratamientoActivity
+
+<img src="./imagenes/capt6.png"  width="300" height="460">
+

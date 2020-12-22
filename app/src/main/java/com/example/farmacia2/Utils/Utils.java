@@ -1,8 +1,13 @@
 package com.example.farmacia2.Utils;
 
+import android.app.Application;
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.text.TextUtils;
 import android.util.Patterns;
+
+import com.example.farmacia2.App.Medicamento;
+import com.google.gson.Gson;
 
 public class Utils {
 
@@ -68,6 +73,17 @@ public class Utils {
      */
     public static boolean IsValidPassWord(String password) {
         return password.length() > 3;
+    }
+
+    public static void saveListaMedicamentosShare(SharedPreferences preferences){
+        //Crea un json a partir de la lista de objetos.
+        String jsonMedicamentos = new Gson().toJson(Medicamento.listaMedicamentos);
+
+        SharedPreferences.Editor editor = preferences.edit();
+        //Guarda lista de objetos, en formato .json
+        editor.putString("JSON", jsonMedicamentos);
+        editor.apply();
+
     }
 
 }
